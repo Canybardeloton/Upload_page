@@ -1,8 +1,10 @@
 import Banner from "./Banner"
+import Login from "./Login"
 
 function App(){
 	return(<div>
 		<Banner />
+		<Login />
 	</div>)
 }
 
