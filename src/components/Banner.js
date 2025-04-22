@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png"
+import dropdown from "../assets/dropdown.png"
 import "../styles/Banner.css"
 import {array} from "../datas/menus"
 import React, {useState, useEffect, useCallback} from 'react'
@@ -32,7 +32,7 @@ function Menu(){
 	return (
 		<div className="niels-menu">
 			<button className="niels-button-menu" onClick={toggleOpen} useEffect>
-				<img src={logo} alt="Menu" className="niels-logo" />
+				<img src={dropdown} alt="Menu" className="niels-dropdown-logo" />
 				<div className="niels-menu-line"></div>
 				<div className="niels-menu-line"></div>
 				<div className="niels-menu-line"></div>
