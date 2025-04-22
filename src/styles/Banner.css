@@ -1,0 +1,20 @@
+.niels-banner {
+    color: blue;
+    text-align: right;
+    padding: 32px;
+    border-bottom: solid 3px black;
+}
+
+.niels-slogan{
+	color: white;
+	padding: 32px;
+}
+
+.niels-option{
+	color: black;
+}
+
+.niels-logo {
+	height: 45px;
+	width: 45px;
+}
