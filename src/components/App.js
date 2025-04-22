@@ -3,7 +3,7 @@ import Login from "./Login"
 import Footer from "./Footer"
 
 function App(){
-	return(<div>
+	return(<div className="App">
 		<Banner />
 		<Login />
 		<Footer />

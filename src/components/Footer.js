@@ -1,19 +1,21 @@
+import {array} from "../datas/menus"
+
 function Footer(){
 	return (<div>
-		<About />
-		<Questionnaire />
+		<About link={array[0].link} />
+		<Questionnaire link={array[1].link} />
 	</div>)
 }
 
-function About(){
-	const link = "www.tryniels.com"
+function About(props){
+	const link = props.link
 	return (<div className="niels-about">
 		<a href={link}>About</a>
 	</div>)
 }
 
-function Questionnaire(){
-	const link = ""
+function Questionnaire(props){
+	const link = props.link
 	return (<div className="niels-questionnaire">
 		<a href={link}>Questionnaire</a>
 	</div>)
