@@ -18,3 +18,5 @@ function Questionnaire(){
 		<a href={link}>Questionnaire</a>
 	</div>)
 }
+
+export default Footer
