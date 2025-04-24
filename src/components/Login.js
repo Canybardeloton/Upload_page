@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
+import "../styles/Login.css"
 
 function Login(){
-	return (<div>
+	return (<div className="niels-body">
 		<Description />
 		<FillUsername />
 		<FillPassword />
@@ -12,7 +13,9 @@ function Login(){
 
 function Description(){
 	const description = "Merci de vous connecter afin de pouvoir importer vos fichiers. Si vous vous connecter pour la premiere fois, merci de creer un compte."
-	return (<p className="niels-description">{description}</p>)
+	return (<div className='niels-description'>
+		<p>{description}</p>
+		</div>)
 }
 
 function FillUsername(){

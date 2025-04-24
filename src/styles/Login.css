@@ -1,0 +1,44 @@
+.niels-body{
+	display: flex;
+	background-image: url('H:\Upload_page\src\assets\Background.png');
+	background-position: center; /* Position: top, right, bottom, left, center ou coordonnées */
+	background-size: cover; /* Options: auto, cover, contain, ou dimensions spécifiques */
+	flex-direction: column;
+	padding: 250px;
+	gap: 10px;
+}
+
+.niels-description{
+	display: flex;
+	margin: auto;
+	width: 700px;
+	height: 150px;
+	position: sticky;
+	align-items: center;
+}
+
+.niels-description::before {
+	content: "";
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: beige;
+	opacity: 0.3;
+	z-index: 1;
+}
+
+.niels-description p{
+	display: flex;
+	position: relative;
+	z-index: 2;
+	color: #333;
+	font-size: large;
+	font-weight: 700;
+	text-align: center;
+	align-items: center;
+	width: 100%;
+	overflow-wrap: break-word;
+}
