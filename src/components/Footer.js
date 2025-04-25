@@ -1,4 +1,5 @@
 import {array} from "../datas/menus"
+import "../styles/Banner.css"
 
 function Footer(){
 	return (<div>

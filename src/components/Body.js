@@ -1,20 +1,24 @@
 import React, {useState} from 'react'
 import "../styles/Body.css"
+import "../styles/Avatar.css"
 import Avatar from './Avatar'
 import { description } from '../datas/instructions'
 
 
 function Body(){
-	return (<div className="niels-body">
-		{description.map((item, index) => (
-			<BubbleDisplay key={index} text={item.text}/>
-		))}
-		<FillUsername />
-		<FillPassword />
-		<LogInButton />
-		<SignUpButton />
-	</div>)
+	return (
+		<div className="niels-body">
+			<Avatar isBottomLeft={true} />
+			{description.map((item, index) => (
+				<BubbleDisplay key={index} text={item.text}/>
+			))}
+			<FillUsername />
+			<FillPassword />
+			<LogInButton />
+		</div>
+	)
 }
+
 
 const	BubbleDisplay = (props) =>{
 	const message = props.text
