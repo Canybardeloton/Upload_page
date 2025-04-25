@@ -11,18 +11,24 @@ function Body(){
 			{description.map((item, index) => (
 				<BubbleDisplay key={index} text={item.text}/>
 			))}
-			<FillUsername />
-			<FillPassword />
-			<LogInButton />
-			<SignUpButton />
+			<Connection />
 		</div>
 	)
 }
 
-const	BubbleDisplay = (props) =>{
+const BubbleDisplay = (props) =>{
 	const message = props.text
 	return (<div>
 		<Avatar message={message} />
+	</div>)
+}
+
+function Connection(){
+	return (<div className='connection-container'>
+		<FillUsername />
+		<FillPassword />
+		<LogInButton />
+		<SignUpButton />
 	</div>)
 }
 

@@ -51,6 +51,35 @@
 	overflow-wrap: break-word;
 }
 
+.connection-container{
+	width: calc(30% - 100px);
+	min-width: 300px;
+	margin: auto;
+	position: absolute;
+	display: flex;
+	border-radius: 10px;
+	flex-direction: column;
+	padding: 3% 8%;
+	gap: 20px;
+	min-height: 400px;
+	overflow: hidden;
+	right: 400px;
+	top : 400px;
+	z-index: 1;
+}
+
+.connection-container::before{
+	content: '';
+	margin: 0;
+	padding: 0;
+	position: relative;
+	background-color: beige;
+	opacity: 0.6;
+	z-index: 0;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
 .niels-username,
 .niels-password,
 .niels-login-button,
