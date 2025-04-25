@@ -13,11 +13,10 @@
 	white-space: nowrap;
 	font-weight: bold;
 	font-size: 20px;
-	font-style: italic;
 	text-decoration: none;
 	margin-left: auto;
 	color: #D97757;
-	padding: 5px;
+	padding: 8px;
 	background-color: white;
 	border-radius: 10px;
 }
@@ -77,6 +76,7 @@
 
 	.niels-slogan {
 		margin: 0;
+		font-size: 14px;
 	}
 }
 
@@ -84,5 +84,9 @@
 	.niels-menu {
 	  flex-direction: column;
 	  align-items: center;
+	}
+	.niels-slogan {
+		margin: 0;
+		font-size: 14px;
 	}
 }

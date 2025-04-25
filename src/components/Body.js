@@ -4,7 +4,6 @@ import "../styles/Avatar.css"
 import Avatar from './Avatar'
 import { description } from '../datas/instructions'
 
-
 function Body(){
 	return (
 		<div className="niels-body">
@@ -15,10 +14,10 @@ function Body(){
 			<FillUsername />
 			<FillPassword />
 			<LogInButton />
+			<SignUpButton />
 		</div>
 	)
 }
-
 
 const	BubbleDisplay = (props) =>{
 	const message = props.text
