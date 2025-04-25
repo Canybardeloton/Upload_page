@@ -1,25 +1,30 @@
 .niels-body{
-	width: 1800px;
+	width: 90%;
+	max-width: 1500px;
 	margin: 20px auto;
 	position: relative;
 	display: flex;
 	border-radius: 10px;
-	background-image: url('H:\Upload_page\src\assets\Background.png');
+	background-image: url('../assets/Background.png');
 	background-position: center; /* Position: top, right, bottom, left, center ou coordonnées */
+	background-size: cover;
 	flex-direction: column;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-	padding: 275px;
-	gap: 10px;
+	padding: 5% 10%;
+	gap: 20px;
+	min-height: 500px;
 	overflow: hidden;
 }
 
 .niels-description{
 	display: flex;
-	margin: auto;
-	width: 700px;
-	height: 150px;
-	position: sticky;
+	width: 100%;
+	max-width: 600px;
+	position: relative;
+	margin: 0 auto;
+	padding: 20px;
 	align-items: center;
+	flex-direction: column;
 }
 
 .niels-description::before {
@@ -31,19 +36,45 @@
 	width: 100%;
 	height: 100%;
 	background-color: beige;
-	opacity: 0.3;
+	opacity: 0.4;
 	z-index: 1;
 }
 
 .niels-description p{
-	display: flex;
 	position: relative;
 	z-index: 2;
-	color: #333;
-	font-size: large;
-	font-weight: 700;
+	color: black;
+	font-size: clamp(18px, 2vw, 24px);
+	font-weight:600;
 	text-align: center;
-	align-items: center;
 	width: 100%;
 	overflow-wrap: break-word;
 }
+
+.niels-username,
+.niels-password,
+.niels-login-button,
+.niels-signup-button {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+@media (max-width: 1024px) {
+	.niels-body {
+	  padding: 5%;
+	}
+  }
+
+  @media (max-width: 768px) {
+	.niels-body {
+	  width: calc(100% - 40px);
+	  padding: 40px 20px;
+	}
+  }
+
+  @media (max-width: 480px) {
+	.niels-description p {
+	  font-size: 16px;
+	}
+  }

@@ -1,9 +1,14 @@
 import React, {useState} from 'react'
 import "../styles/Body.css"
+import Avatar from './Avatar'
+import { description } from '../datas/instructions'
+
 
 function Body(){
 	return (<div className="niels-body">
-		<Description />
+		{description.map((item, index) => (
+			<BubbleDisplay key={index} text={item.text}/>
+		))}
 		<FillUsername />
 		<FillPassword />
 		<LogInButton />
@@ -11,11 +16,11 @@ function Body(){
 	</div>)
 }
 
-function Description(){
-	const description = "Merci de vous connecter afin de pouvoir importer vos fichiers. Si vous vous connecter pour la premiere fois, merci de creer un compte."
-	return (<div className='niels-description'>
-		<p>{description}</p>
-		</div>)
+const	BubbleDisplay = (props) =>{
+	const message = props.text
+	return (<div>
+		<Avatar message={message} />
+	</div>)
 }
 
 function FillUsername(){
