@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import "../styles/Login.css"
+import "../styles/Body.css"
 
-function Login(){
+function Body(){
 	return (<div className="niels-body">
 		<Description />
 		<FillUsername />
@@ -56,10 +56,10 @@ function LogInButton(){
 }
 
 function SignUpButton(){
-	const content = "Creer un compte"
+	const content = "Créer un compte"
 	return (<div className='niels-signup-button'>
 		<button href="">{content}</button>
 	</div>)
 }
 
-export default Login
+export default Body

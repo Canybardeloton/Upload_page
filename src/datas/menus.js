@@ -1,10 +1,10 @@
 export const array = [
 	{
-		name :"About",
+		title :"A propos",
 		link : "www.tryniels.com",
 	},
 	{
-		name :"Questionnaire",
+		title :"Questionnaire",
 		link : ""
 	},
 ]

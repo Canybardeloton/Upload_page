@@ -2,98 +2,73 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 20px;
-	height: 70px;
-}
-
-.niels-banner::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	z-index: 11;
+	position: relative;
+	margin: 30px 40px;
 }
 
 .niels-slogan{
-	flex-grow: 1;
-	text-align: right;
-	color: black;
+	font-weight: bold;
+	font-size: 18px;
+	font-style: italic;
+	position: absolute;
+	text-decoration: none;
+	right: 60px;
+	top: 50%;
+	color: #D97757;
+	padding: 7px;
+	transform: translateY(-50%);
 }
 
-.niels-slogan h2{
-	margin: 0;
-	font-size: 1.5rem;
-	color: #2F33A8;
+.niels-slogan::after{
+	content: "";
+	border-radius: 10px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	z-index: -1;
 }
 
-.niels-option{
-	color: black;
+.niels-slogan:hover{
+	color:  white;
 }
 
-.niels-dropdown-logo {
-	height: 30px;
-	width: 30px;
+.niels-slogan:hover::after{
+	position: absolute;
+	background-color:#D97757;
+	border-radius: 10px;
+	z-index: -1;
 }
 
 .niels-menu{
-	position: relative;
-	z-index: 12;
+	font-weight: bold;
+	position: absolute;
+	font-size: 18px;
+	top:50%;
+	margin-left:60px;
+	transform: translateY(-50%);
 }
 
-.niels-button-menu{
-	background: none;
-	border: none;
-	cursor: pointer;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 24px;
-	padding: 0;
-	width: 30px;
+.niels-menu a{
+	color:#D97757;
+	border-bottom: 2px solid #D97757;
+	border-top: 2px solid transparent; /* Bordures invisibles par défaut */
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	display: inline-block;
+	margin-left:30px;
+	padding: 7px;
+	transition: border-color 0.3s ease;
 }
 
-.niels-menu-line{
-	background-color: #000;
-	border-radius: 4px;
-	height: 4px;
-	width: 100%;
-}
-
-.niels-menu-options ul{
-	color: #000;
-	list-style: none;
-	text-align: left;
-	align-items: center;
-	margin: 20px;
-	padding: 0;
-}
-
-.niels-menu-options li{
-	display: flex;
-	border-bottom: 1px solid #eee;
-	align-items: center;
-}
-
-.niels-menu-options li:last-child {
-	border-bottom: none;
-}
-
-.niels-menu-options {
-	position: absolute; /* Sort du flux normal du document */
-	top: 100%; /* Positionne juste en dessous du bouton menu */
-	left: 0; /* Aligné à gauche du conteneur parent */
-	width: 400px; /* Largeur du menu (ajuste selon tes besoins) */
-	background-color: rgba(255, 255, 255, 0.7); /* Fond du menu */
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour effet visuel */
-	z-index: 1; /* Assure que le menu est au premier plan */
-	display: none; /* Caché par défaut */
-}
-
-  /* Pour afficher le menu lors du clic ou du survol (selon ton besoin) */
-  .niels-menu:hover .niels-menu-options,
-.niels-menu.active .niels-menu-options {
-	display: block;
+.niels-menu a:hover{
+	background-color:white;
+	border-radius: 10px;
+	border: 2px solid #D97757;
 }

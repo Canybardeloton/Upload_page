@@ -1,12 +1,11 @@
+import '../styles/Reset.css'
 import Banner from "./Banner"
-import Login from "./Login"
-import Footer from "./Footer"
+import Body from "./Body"
 
 function App(){
 	return(<div className="App">
 		<Banner />
-		<Login />
-		<Footer />
+		<Body />
 	</div>)
 }
 

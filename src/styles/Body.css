@@ -1,11 +1,16 @@
 .niels-body{
+	width: 1800px;
+	margin: 20px auto;
+	position: relative;
 	display: flex;
+	border-radius: 10px;
 	background-image: url('H:\Upload_page\src\assets\Background.png');
 	background-position: center; /* Position: top, right, bottom, left, center ou coordonnées */
-	background-size: cover; /* Options: auto, cover, contain, ou dimensions spécifiques */
 	flex-direction: column;
-	padding: 250px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	padding: 275px;
 	gap: 10px;
+	overflow: hidden;
 }
 
 .niels-description{
