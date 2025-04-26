@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import "../styles/Body.css"
 import "../styles/Avatar.css"
 import Avatar from './Avatar'
@@ -11,68 +10,25 @@ function Body(){
 			{description.map((item, index) => (
 				<BubbleDisplay key={index} text={item.text}/>
 			))}
-			<Connection />
 		</div>
 	)
 }
 
 const BubbleDisplay = (props) =>{
-	const message = props.text
+	const processMessage = (text) => {
+		if (typeof text === 'string') {
+			const dotIndex = text.indexOf('. ');
+			if (dotIndex !== -1) {
+				return {
+					firstPart: text.substring(0, dotIndex + 1), // Inclure le point
+					secondPart: text.substring(dotIndex + 2) // Commencer après le point et l'espace
+				};
+			}
+		}
+		return text; // Retourner tel quel si c'est déjà un objet ou si pas de point trouvé
+	};
 	return (<div>
-		<Avatar message={message} />
-	</div>)
-}
-
-function Connection(){
-	return (<div className='connection-container'>
-		<FillUsername />
-		<FillPassword />
-		<LogInButton />
-		<SignUpButton />
-	</div>)
-}
-
-function FillUsername(){
-	const [value, setValue] = useState('');
-	const handleChange = (e) => {
-		setValue(e.target.value);
-	};
-	return (<div className='niels-username'>
-		<input
-			type="text"
-			value={value}
-			onChange={handleChange}
-			placeholder='Identifiant'
-		/>
-	</div>)
-}
-
-function FillPassword(){
-	const [value, setValue] = useState('');
-	const handleChange = (e) => {
-		setValue(e.target.value);
-	};
-	return (<div className='niels-password'>
-		<input
-			type="text"
-			value={value}
-			onChange={handleChange}
-			placeholder='Mot de passe'
-		/>
-	</div>)
-}
-
-function LogInButton(){
-	const content = "Se connecter"
-	return (<div className='niels-login-button'>
-		<button href="">{content}</button>
-	</div>)
-}
-
-function SignUpButton(){
-	const content = "Créer un compte"
-	return (<div className='niels-signup-button'>
-		<button href="">{content}</button>
+		<Avatar message={processMessage(props.text)} />
 	</div>)
 }
 

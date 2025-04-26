@@ -16,79 +16,6 @@
 	overflow: hidden;
 }
 
-.niels-description{
-	display: flex;
-	width: 100%;
-	max-width: 600px;
-	position: relative;
-	margin: 0 auto;
-	padding: 20px;
-	align-items: center;
-	flex-direction: column;
-}
-
-.niels-description::before {
-	content: "";
-	border-radius: 10px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: beige;
-	opacity: 0.4;
-	z-index: 1;
-}
-
-.niels-description p{
-	position: relative;
-	z-index: 2;
-	color: black;
-	font-size: clamp(18px, 2vw, 24px);
-	font-weight:600;
-	text-align: center;
-	width: 100%;
-	overflow-wrap: break-word;
-}
-
-.connection-container{
-	width: calc(30% - 100px);
-	min-width: 300px;
-	margin: auto;
-	position: absolute;
-	display: flex;
-	border-radius: 10px;
-	flex-direction: column;
-	padding: 3% 8%;
-	gap: 20px;
-	min-height: 400px;
-	overflow: hidden;
-	right: 400px;
-	top : 400px;
-	z-index: 1;
-}
-
-.connection-container::before{
-	content: '';
-	margin: 0;
-	padding: 0;
-	position: relative;
-	background-color: beige;
-	opacity: 0.6;
-	z-index: 0;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-
-.niels-username,
-.niels-password,
-.niels-login-button,
-.niels-signup-button {
-  width: 100%;
-  max-width: 400px;
-  margin: 10px auto;
-}
-
 @media (max-width: 1024px) {
 	.niels-body {
 	  padding: 5%;
@@ -99,11 +26,5 @@
 	.niels-body {
 	  width: calc(100% - 40px);
 	  padding: 40px 20px;
-	}
-  }
-
-  @media (max-width: 480px) {
-	.niels-description p {
-	  font-size: 16px;
 	}
   }
