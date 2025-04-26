@@ -8,6 +8,7 @@
 		"@testing-library/user-event": "^12.1.10",
 		"react": "^19.0.1",
 		"react-dom": "^19.0.1",
+		"react-router-dom": "^7.5.2",
 		"react-scripts": "^5.0.1",
 		"react-select": "^5.10.1",
 		"web-vitals": "^0.2.4"

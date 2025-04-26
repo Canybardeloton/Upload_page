@@ -1,13 +1,15 @@
 .auth-container {
+	align-items: flex-start;
 	width: calc(30% - 100px);
 	min-width: 400px;
 	background-color: #b87333; /* Couleur bronze/marron pour le contour */
 	border-radius: 12px;
 	padding: 4px;
 	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-	position: absolute;
-	right: 25%;
-	top: 20%;
+	position: fixed;
+	right: 25vw; /* Position droite basée sur la largeur de la fenêtre */
+	top: 20vh; /* Position haute basée sur la hauteur de la fenêtre */
+	z-index: 1000; /* Assure que le bloc reste au-dessus d'autres éléments */
 }
 
 .auth-tabs {
