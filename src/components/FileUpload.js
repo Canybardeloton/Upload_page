@@ -1,9 +1,10 @@
 import React, {useState, useRef} from "react"
+import "../styles/FileUpload.css"
 
 function UploadFiles(){
 	const [files, setFiles] = useState([]);
 	const [isDragging, setIsDragging] = useState(false);
-	const [UploadStatus, setUploadStatus] = useState('');
+	const [uploadStatus, setUploadStatus] = useState('');
 	const fileInputRef = useRef(null);
 
 	const handleFiles = (fileList) => {
@@ -104,10 +105,38 @@ function UploadFiles(){
 				onChange={handleFileInputChange}
 				multiple
 				style={{ display: 'none' }}
-			/>
-		</div>
-		<button type="button" className="upload-button">Importer</button>
-	</div>)
+				/>
+				</div>
+
+				{files.length > 0 && (
+				  <div className="file-list">
+					<h3>Fichiers sélectionnés:</h3>
+					<ul>
+					  {files.map((file, index) => (
+						<li key={index}>
+						  {file.name} - {(file.size / 1024).toFixed(2)} KB
+						  <button
+							type="button"
+							className="remove-button"
+							onClick={() => removeFile(index)}
+						  >
+							×
+						  </button>
+						</li>
+					  ))}
+					</ul>
+					<button
+					  type="button"
+					  className="upload-button"
+					  onClick={handleUpload}
+					>
+					  Envoyer les fichiers
+					</button>
+				  </div>
+				)}
+				{uploadStatus && <p className="status-message">{uploadStatus}</p>}
+			  </div>
+			);
 }
 
 export default UploadFiles

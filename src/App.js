@@ -1,10 +1,11 @@
 import './styles/Reset.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Banner from "./components/Banner"
-//import ImportFiles from "./pages/ImportFiles"
+import HandleFiles from "./pages/ImportFiles"
 import Body from "./components/Body"
 import Connection from './components/Connection'
 import { useState, useEffect } from 'react';
+
 
 function App(){
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -27,7 +28,8 @@ function App(){
 			<Routes>
 			  {isAuthenticated ? (
 				<>
-				  <Route path="*" element={<Navigate to="/import" replace />} />
+					<Route path="/import" element={<HandleFiles />} />
+					<Route path="*" element={<Navigate to="/import" replace />} />
 				</>
 			  ) : (
 				<>

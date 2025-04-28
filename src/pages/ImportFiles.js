@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import "../styles/ImportFiles.css"
+import "../styles/FileUpload.css"
 import UploadFiles from "../components/FileUpload"
 
 
@@ -33,15 +33,15 @@ function MainBoard({isMobile}){
 			<div className='file-tabs'>
 				<button className={` file-tab ${activeTab === 'upload' ? 'active' : ''}`}
 				onClick={() => setActiveTab('upload')}>
-					Connexion
+					Importer des fichiers
 				</button>
 				<button className={` file-tab ${activeTab === 'dashboard' ? 'active' : ''}`}
 				onClick={() => setActiveTab('dashboard')}>
-					Créer un compte
+					Tableau de bord
 				</button>
 			</div>
 			<div className={`file-content ${activeTab === 'upload' ? 'upload-active' : 'dashboard-active'}`}>
-				{activeTab === 'login' ? <UploadFiles /> : <Dashboard />}
+				{activeTab === 'upload' ? <UploadFiles /> : ''}
 			</div>
 		</div>
 	)
