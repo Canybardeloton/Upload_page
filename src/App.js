@@ -1,9 +1,8 @@
 import './styles/Reset.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import Banner from "./components/Banner"
 import HandleFiles from "./pages/ImportFiles"
-import Body from "./components/Body"
-import Connection from './components/Connection'
+import Login from './pages/Login'
+
 import { useState, useEffect } from 'react';
 
 
@@ -23,18 +22,16 @@ function App(){
 	return (
 		<BrowserRouter>
 		  <div className="App">
-			<Banner />
-			<Body />
 			<Routes>
 			  {isAuthenticated ? (
 				<>
-					<Route path="/import" element={<HandleFiles />} />
-					<Route path="*" element={<Navigate to="/import" replace />} />
+					<Route path="/" element={<Login onLogin={handleLogin} />} />
+					<Route path="*" element={<Navigate to="/" replace />} />
 				</>
 			  ) : (
 				<>
-				  <Route path="/" element={<Connection onLogin={handleLogin} />} />
-				  <Route path="*" element={<Navigate to="/" replace />} />
+				  <Route path="/import" element={<HandleFiles />} />
+				  <Route path="*" element={<Navigate to="/import" replace />} />
 				</>
 			  )}
 			</Routes>

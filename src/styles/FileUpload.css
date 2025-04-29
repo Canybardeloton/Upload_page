@@ -1,19 +1,32 @@
-.upload-container {
+.file-container {
 	align-items: flex-start;
-	width: calc(30% - 100px);
-	min-width: 400px;
-	background-color: #b87333; /* Couleur bronze/marron pour le contour */
+	width: 95%;
+	max-width: 1700px;
+	min-height: 800px;
 	border-radius: 12px;
-	padding: 4px;
-	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 	position: fixed;
-	right: 25vw; /* Position droite basée sur la largeur de la fenêtre */
-	top: 20vh; /* Position haute basée sur la hauteur de la fenêtre */
-	z-index: 1000; /* Assure que le bloc reste au-dessus d'autres éléments */
+	margin: auto;
+	left: 6vw;
+	background-color: #E3C8A1;
+}
+
+.file-content {
+	position: relative;
+	top: 2vw;
+	margin: 5%;
+	background-color: #2684ff;
+	padding: 24px;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
 }
 
 .file-tabs {
-	display: flex;
+	position: absolute;
+	align-items: center;
+	background-color: #FFEAD5;
+	width: 100%;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 	border-bottom: none;
 	margin-bottom: 0;
 }
@@ -21,7 +34,9 @@
 .file-tab {
 	flex: 1;
 	padding: 12px;
+	width: 40%;
 	background: none;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 	border: none;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
@@ -29,11 +44,24 @@
 	font-weight: bold;
 	cursor: pointer;
 	text-align: center;
-	color: antiquewhite;
+	color: #E3C8A1;
 	transition: all 0.3s ease;
 	border-radius: 0;
 }
 
+.file-tab.active:first-child {
+	background-color: #B76B01;
+	color: #333;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.file-tab.active:last-child {
+	background-color: #B76B01;
+	color: #333;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
 
 .drop-area {
 	border: 2px dashed #ccc;

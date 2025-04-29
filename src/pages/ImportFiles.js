@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import "../styles/FileUpload.css"
 import UploadFiles from "../components/FileUpload"
+import Banner from "../components/Banner"
 
 
 //Composant à avoir : 2 onglets de tableau de bord et d'import de fichiers
@@ -19,7 +20,8 @@ function HandleFiles(){
 	}, []);
 
 	return (
-		<div className='connection-container'>
+		<div>
+			<Banner />
 			<MainBoard isMobile={isMobile} />
 		</div>
 	);
