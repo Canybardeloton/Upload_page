@@ -1,11 +1,30 @@
-import React, {useState, useRef} from "react"
+import React, {useState, useRef, useEffect} from "react"
 import "../styles/FileUpload.css"
 
 function UploadFiles(){
 	const [files, setFiles] = useState([]);
 	const [isDragging, setIsDragging] = useState(false);
 	const [uploadStatus, setUploadStatus] = useState('');
+	const [currentPage, setCurrentPage] = useState(0);
 	const fileInputRef = useRef(null);
+
+	const FILES_PER_PAGE = 3;
+	const totalPages = Math.ceil(files.length / FILES_PER_PAGE);
+
+	const handlePageChange = (page_number) =>{
+		setCurrentPage(page_number);
+	};
+
+	const displayedFiles = files.slice(
+		currentPage * FILES_PER_PAGE,
+		(currentPage + 1) * FILES_PER_PAGE
+	);
+
+	useEffect(() => {
+		if (files.length <= currentPage * FILES_PER_PAGE && currentPage > 0){
+			setCurrentPage(Math.max(0, totalPages - 1));
+		}
+	},[files.length, currentPage, totalPages]);
 
 	const handleFiles = (fileList) => {
 		const newFiles = Array.from(fileList);
@@ -110,21 +129,36 @@ function UploadFiles(){
 
 				{files.length > 0 && (
 				  <div className="file-list">
-					<h3>Fichiers sélectionnés:</h3>
+					<h3>Fichiers sélectionnés: ({files.length})</h3>
 					<ul>
-					  {files.map((file, index) => (
-						<li key={index}>
+					  {displayedFiles.map((file, index) => {
+						const realIndex = index + currentPage * FILES_PER_PAGE;
+						return (
+						<li key={realIndex}>
 						  {file.name} - {(file.size / 1024).toFixed(2)} KB
 						  <button
 							type="button"
 							className="remove-button"
-							onClick={() => removeFile(index)}
+							onClick={() => removeFile(realIndex)}
 						  >
 							×
 						  </button>
 						</li>
-					  ))}
+						);
+					  })}
 					</ul>
+					{totalPages > 1 && (
+						<div className="pagination">
+						{Array.from({ length: totalPages }, (_, i) => (
+							<button
+							key={i}
+							className={`page-dot ${currentPage === i ? 'active' : ''}`}
+							onClick={() => handlePageChange(i)}
+							aria-label={`Page ${i + 1}`}
+							/>
+						))}
+						</div>
+					)}
 					<button
 					  type="button"
 					  className="upload-button"

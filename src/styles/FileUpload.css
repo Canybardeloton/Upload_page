@@ -2,7 +2,7 @@
 	align-items: flex-start;
 	width: 95%;
 	max-width: 1700px;
-	min-height: 800px;
+	height: 800px;
 	border-radius: 12px;
 	position: fixed;
 	margin: auto;
@@ -12,10 +12,10 @@
 
 .file-content {
 	position: relative;
-	top: 2vw;
 	margin: 5%;
-	background-color: #2684ff;
+	background-color: white;
 	padding: 24px;
+	max-height: 85%;
 	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 	border-radius: 8px;
 }
@@ -44,21 +44,21 @@
 	font-weight: bold;
 	cursor: pointer;
 	text-align: center;
-	color: #E3C8A1;
+	color: #333;
 	transition: all 0.3s ease;
 	border-radius: 0;
 }
 
 .file-tab.active:first-child {
 	background-color: #B76B01;
-	color: #333;
+	color: white;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 }
 
 .file-tab.active:last-child {
 	background-color: #B76B01;
-	color: #333;
+	color: white;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 }
@@ -66,7 +66,7 @@
 .drop-area {
 	border: 2px dashed #ccc;
 	border-radius: 8px;
-	padding: 40px 20px;
+	padding: 20px 20px;
 	text-align: center;
 	margin: 20px 0;
 	cursor: pointer;
@@ -147,4 +147,25 @@
 	padding: 10px;
 	border-radius: 4px;
 	background-color: #f6f6f6;
+  }
+
+  .pagination {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0;
+  }
+
+  .page-dot {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: #ddd;
+	border: none;
+	margin: 0 5px;
+	cursor: pointer;
+	padding: 0;
+  }
+
+  .page-dot.active {
+	background-color: #2684ff;
   }

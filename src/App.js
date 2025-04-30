@@ -23,17 +23,14 @@ function App(){
 		<BrowserRouter>
 		  <div className="App">
 			<Routes>
-			  {isAuthenticated ? (
 				<>
 					<Route path="/" element={<Login onLogin={handleLogin} />} />
 					<Route path="*" element={<Navigate to="/" replace />} />
 				</>
-			  ) : (
 				<>
 				  <Route path="/import" element={<HandleFiles />} />
 				  <Route path="*" element={<Navigate to="/import" replace />} />
 				</>
-			  )}
 			</Routes>
 		  </div>
 		</BrowserRouter>
