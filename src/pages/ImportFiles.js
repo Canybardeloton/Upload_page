@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import "../styles/FileUpload.css"
 import UploadFiles from "../components/FileUpload"
 import Banner from "../components/Banner"
+import Dashboard from "../components/Dashboard";
 
 
 //Composant à avoir : 2 onglets de tableau de bord et d'import de fichiers
@@ -43,7 +44,7 @@ function MainBoard({isMobile}){
 				</button>
 			</div>
 			<div className={`file-content ${activeTab === 'upload' ? 'upload-active' : 'dashboard-active'}`}>
-				{activeTab === 'upload' ? <UploadFiles /> : ''}
+				{activeTab === 'upload' ? <UploadFiles /> : <Dashboard />}
 			</div>
 		</div>
 	)
