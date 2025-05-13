@@ -1,12 +1,15 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Serveur Node.js avec PostgreSQL pour l'upload de fichiers",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "init-db": "node db/init.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["node", "express", "postgresql", "upload"],
   "author": "",
   "license": "ISC",
   "type": "commonjs",

@@ -6,6 +6,7 @@ function UploadFiles(){
 	const [isDragging, setIsDragging] = useState(false);
 	const [uploadStatus, setUploadStatus] = useState('');
 	const [currentPage, setCurrentPage] = useState(0);
+	const [loading, setLoading] = useState(false);
 	const fileInputRef = useRef(null);
 
 	const FILES_PER_PAGE = 3;
@@ -69,6 +70,7 @@ function UploadFiles(){
 			return;
 		}
 
+		setLoading(true);
 		setUploadStatus('Chargement en cours...');
 
 		const formData = new FormData();
@@ -77,21 +79,34 @@ function UploadFiles(){
 		});
 
 		try {
-			// Remplacez par votre endpoint API
-			const response = await fetch('/api/upload', {
-			method: 'POST',
-			body: formData,
-		});
-
-			if (response.ok) {
-				setUploadStatus('Fichiers importés avec succès!');
-				setFiles([]);
-			} else {
-				setUploadStatus('Erreur lors de l\'importation.');
+			// Récupérer le token d'authentification
+			const token = localStorage.getItem('userToken');
+			if (!token) {
+				throw new Error('Vous devez être connecté pour uploader des fichiers');
 			}
+
+			// Appel à l'API avec authentification
+			const response = await fetch('http://localhost:5000/api/files/upload', {
+				method: 'POST',
+				headers: {
+					'Authorization': `Bearer ${token}`
+				},
+				body: formData,
+			});
+
+			const data = await response.json();
+
+			if (!response.ok) {
+				throw new Error(data.message || 'Erreur lors de l\'importation');
+			}
+
+			setUploadStatus('Fichiers importés avec succès!');
+			setFiles([]);
 		} catch (error) {
-			setUploadStatus('Erreur de connexion au serveur.');
+			setUploadStatus(`Erreur: ${error.message}`);
 			console.error(error);
+		} finally {
+			setLoading(false);
 		}
 	}
 
@@ -163,8 +178,9 @@ function UploadFiles(){
 					  type="button"
 					  className="upload-button"
 					  onClick={handleUpload}
+					  disabled={loading}
 					>
-					  Envoyer les fichiers
+					  {loading ? 'Envoi en cours...' : 'Envoyer les fichiers'}
 					</button>
 				  </div>
 				)}
