@@ -1,0 +1,92 @@
+.niels-banner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: calc(100% - 100px);
+	max-width: 1700px;
+	padding: 1rem;
+	margin: auto;
+	background-color: #FFEAD5;
+}
+
+.niels-slogan{
+	white-space: nowrap;
+	font-weight: bold;
+	font-size: 20px;
+	text-decoration: none;
+	margin-left: auto;
+	color: #D97757;
+	padding: 8px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.niels-slogan:hover{
+	color:  white;
+	border-radius: 10px;
+	background-color:#D97757;
+}
+
+.niels-menu{
+	display: flex;
+	gap: 2rem;
+	font-size: 24 px;
+	font-weight: bold;
+}
+
+.niels-menu a{
+	color:#D97757;
+	border-bottom: 2px solid #D97757;
+	border-radius: 10px;
+	border-top: 2px solid transparent; /* Bordures invisibles par défaut */
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	text-decoration: none;
+	padding: 7px;
+	transition: border-color 0.3s ease;
+}
+
+.niels-menu a:hover{
+	background-color:white;
+	border-radius: 10px;
+	border: 2px solid #D97757;
+}
+
+@media (max-width: 1024px) {
+	.niels-banner {
+	  width: calc(100% - 60px);
+	  padding: 1rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.niels-banner {
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+		width: calc(100% - 40px);
+	}
+
+	.niels-menu {
+		width: 100%;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.niels-slogan {
+		margin: 0;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.niels-menu {
+	  flex-direction: column;
+	  align-items: center;
+	}
+	.niels-slogan {
+		margin: 0;
+		font-size: 14px;
+	}
+}

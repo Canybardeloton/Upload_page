@@ -1,0 +1,30 @@
+.niels-body{
+	width: 95%;
+	max-width: 1700px;
+	margin: auto;
+	position: relative;
+	display: flex;
+	border-radius: 10px;
+	background-image: url('../assets/Background.png');
+	background-position: center;
+	background-size: cover;
+	flex-direction: column;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	padding: 3% 8%;
+	gap: 20px;
+	min-height: 800px;
+	overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+	.niels-body {
+	  padding: 5%;
+	}
+  }
+
+  @media (max-width: 768px) {
+	.niels-body {
+	  width: calc(100% - 40px);
+	  padding: 40px 20px;
+	}
+  }
