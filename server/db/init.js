@@ -1,4 +1,4 @@
-import { pool } from './index';
+const { pool } = require('./index');
 
 // Fonction pour créer les tables
 async function initDatabase() {
